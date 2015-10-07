@@ -278,7 +278,7 @@ class Highlights
         when "'" then '&#39;'
         when '<' then '&lt;'
         when '>' then '&gt;'
-        when ' ' then '&nbsp;'
+        when ' ' then ' '
         else match
 
   updateScopeStack: (scopeStack, desiredScopes, html) ->

@@ -16,7 +16,7 @@ describe "Highlights", ->
     it "overrides built-in grammars", ->
       highlights = new Highlights(includePath: path.join(__dirname, 'fixtures', 'includes'))
       html = highlights.highlightSync(fileContents: 's = "test"', scopeName: 'source.coffee')
-      expect(html).toBe '<pre class="editor editor-colors"><div class="line"><span class="source coffee"><span>s&nbsp;=&nbsp;&quot;test&quot;</span></span></div></pre>'
+      expect(html).toBe '<pre class="editor editor-colors"><div class="line"><span class="source coffee"><span>s = &quot;test&quot;</span></span></div></pre>'
 
   describe "highlightSync", ->
     it "returns an HTML string", ->
@@ -75,7 +75,7 @@ describe "Highlights", ->
       highlights = new Highlights(includePath: path.join(__dirname, 'fixtures', 'includes'))
       highlights.highlight(fileContents: 's = "test"', scopeName: 'source.coffee',(err, html) ->
         expect(!err).toBe true
-        expect(html).toBe '<pre class="editor editor-colors"><div class="line"><span class="source coffee"><span>s&nbsp;=&nbsp;&quot;test&quot;</span></span></div></pre>'
+        expect(html).toBe '<pre class="editor editor-colors"><div class="line"><span class="source coffee"><span>s = &quot;test&quot;</span></span></div></pre>'
         done()
       )
 
